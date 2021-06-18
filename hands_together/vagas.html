@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas vagas</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="overflow-auto">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top corNavBarPadrao">
+            <div class="container-fluid">
+                <img src="imgs/logo_hands_together.png" alt="" width="50;" height="50;">
+                <a class="navbar-brand" href="index.html">Hands Together</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Perfil de ONGs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Minha Página</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="vagas.html">Minhas Vagas</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <a href="#"><img src="imgs/ong5.png" class="rounded float-end" alt="" style="width: 45px; height: 45px;"></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid corDeFundoPadrao">
+            <div class="middle">
+                <div class="col-9" style="width: 100%; margin: 0 auto; ">
+                    <div class="bg-light p-5 rounded">
+                        <div class="row p-2 justify-content-center">
+                            <div class="col-4">
+                                <h2>MINHAS VAGAS</h2>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <a href="cadastroVaga.html" class="col d-md-flex justify-content-md;"
+                                style="text-decoration: none;">
+                                <button class="btn btn-outline-primary btn-sm botaoNovo" type="button">
+                                    <h6>
+                                        + Adicionar vaga
+                                    </h6>
+                                </button>
+                            </a>
+                            <form class="col-6 col-lg-4 mb-3 mb-lg-0 me-lg-3">
+                                <div class="form-group input-group ">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                                    <input name="Consulta" id="txt_consulta" onkeyup="filtrar()" type="text"
+                                        class="form-control form-control-dark" placeholder="Pesquisar por vaga...">
+                                </div>
+                            </form>
+                        </div>
+                        <table class="table" id="tabela_vagas">
+                            <thead class="corNavBarPadrao">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Título</th>
+                                    <th scope="col">Tipo</th>
+                                    <th scope="col">Data criação</th>
+                                    <th scope="col">Local</th>
+                                    <th scope="col">   
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td><a href="visualizacaoVaga.html" style="color: black;"> Vacinação contra sarampo</a></td>
+                                    <td>Saúde</td>
+                                    <td>18/06/2021</td>
+                                    <td>Iguatemi - PR</td>
+                                    <td>
+                                        <a href="#">
+                                            <img src="imgs/treeDots.png" alt="" width="25" height="25">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td><a href="visualizacaoVaga.html" style="color: black;">Vacinação contra HPV</a></td>
+                                    <td>Saúde</td>
+                                    <td>12/07/2021</td>
+                                    <td>Sarandi - PR</td>
+                                    <td>
+                                        <a href="#">
+                                            <img src="imgs/treeDots.png" alt="" width="25" height="25">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td><a href="visualizacaoVaga.html" style="color: black;">Vacinação contra COVID</a></td>
+                                    <td>Saúde</td>
+                                    <td>23/07/2021</td>
+                                    <td>Iguatemi - PR</td>
+                                    <td>
+                                        <a href="#">
+                                            <img src="imgs/treeDots.png" alt="" width="25" height="25">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td><a href="visualizacaoVaga.html" style="color: black;">Vacinação contra febre amarela</a></td>
+                                    <td>Saúde</td>
+                                    <td>03/08/2021</td>
+                                    <td>Iguatemi - PR</td>
+                                    <td>
+                                        <a href="#">
+                                            <img src="imgs/treeDots.png" alt="" width="25" height="25">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td><a href="visualizacaoVaga.html" style="color: black;">Vacinação contra tétano</a></td>
+                                    <td>Saúde</td>
+                                    <td>08/08/2021</td>
+                                    <td>Maringá - PR</td>
+                                    <td>
+                                        <a href="#">
+                                            <img src="imgs/treeDots.png" alt="" width="25" height="25">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row corNavBarPadrao" style="height: fit-content; margin: 0 auto;">
+        <div class="row p-2" style="padding: 20px 20px; margin: 0 auto;">
+            <div class="col-1" style="padding: 20px 10px;">
+                <img src="imgs/ong-logo-removebg-preview.png" alt="" width="80px" height="80px">
+            </div>
+            <div class="col-8" style="padding: 10px;">
+                <h6><a href="#" style="color: black;">Contato</a></h6>
+                <h6><a href="#" style="color: black;">Sobre</a></h6>
+                <h6><a href="#" style="color: black;">Termos de Uso</a></h6>
+                <h6><a href="#" style="color: black;">Política de privacidade</a></h6>
+            </div>
+            <div class="col-3" style="padding: 10px;">
+                <div class="row">
+                    <h6> Todos os direitos reservados </h6>
+                </div>
+                <div class="row">
+                    <h6> UNICESUMAR - <a href="https://www.unicesumar.edu.br/home/"
+                            style="color: blue;">unicesumar.edu.br</a></h6>
+                </div>
+                <div class="row">
+                    <h6>
+                        Maringá PR
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <script src=".\js\main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+}
+
+.header {
+    grid-area: header;
+}
+
+.middle {
+    grid-area: middle;
+    padding: 100px 180px;
+    font-style: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.middle-index{
+    grid-area: middle;
+    padding: 40px 180px;
+    font-style: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.ongs{
+    grid-area: auto;
+}
+
+.footer{
+    display: block;
+    position: absolute;
+    width: 100%;   
+}
+
+.corDeFundoPadrao {
+    background-color: rgb(148, 184, 207);;
+}
+
+.corNavBarPadrao{
+    background-color: rgb(58, 128, 219);
+}

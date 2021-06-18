@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands Together</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="overflow-auto ">
+        <nav class="navbar navbar-expand-md navbar-dark corNavBarPadrao">
+            <div class="container-fluid">
+                <img src="imgs/logo_hands_together.png" alt="" width="50;" height="50;">
+                <a class="navbar-brand" href="index.html">Hands Together</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Perfil de ONGs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Minha Página</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="vagas.html">Minhas Vagas</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <a href="#"><img src="imgs/ong5.png" class="rounded float-end" alt="" style="width: 45px; height: 45px;"></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid corDeFundoPadrao">
+            <div class="middle-index">
+                <div class="col-12" style="width: 100%; margin: 0 auto; ">
+                    <div class="row">
+                        <form class="col-lg-5 mb-3 mb-lg-0 me-lg-0">
+                            <div class="form-group input-group ">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                                <input name="ConsultaOngs" id="txt_consulta_ongs" onkeyup="filtrarOngsIndex()"
+                                    type="text" class="form-control form-control-dark" placeholder="Pesquisar...">
+                            </div>
+                        </form>
+                        <!-- FILTROS -->
+                        <div class="col-2 mb-3">
+                            <select class="form-select" id="inputGroupSelectTipos" onkeyup="filtrarOngsByState()">
+                                <option hidden>Estado</option>
+                                <option value="1">PR</option>
+                                <option value="2">SC</option>
+                                <option value="3">SP</option>
+                                <option value="3">MT</option>
+                                <option value="3">MS</option>
+                            </select>
+                        </div>
+                        <div class="col-2 mb-3">
+                            <select class="form-select" id="inputGroupSelectTipos">
+                                <option hidden>Cidade</option>
+                                <option value="1">Maringá</option>
+                                <option value="2">Iguatemi</option>
+                                <option value="3">Sarandi</option>
+                                <option value="3">São Paulo</option>
+                                <option value="3">Castro</option>
+                            </select>
+                        </div>
+                        <div class="col-3 mb-3">
+                            <select class="form-select" id="inputGroupSelectTipos">
+                                <option hidden>Tipo</option>
+                                <option value="1">Animais</option>
+                                <option value="2">Assistência Social</option>
+                                <option value="3">Cultura</option>
+                                <option value="4">Direitos</option>
+                                <option value="5">Educação e Pesquisa</option>
+                                <option value="6">Habitação</option>
+                                <option value="7">Meio ambiente</option>
+                                <option value="8">Saúde</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-3 text-center">
+                            Descrição
+                        </div>
+                        <div class="col-3 text-center">
+                            Tipo
+                        </div>
+                        <div class="col-3 text-center">
+                            Data e local
+                        </div>
+                    </div>
+                    <div class="col" id="info_ongs">
+                        <div class="row border border-2 mt-2 p-2 ongs" style="background-color: whitesmoke;">
+                            <div class="col">
+                                <img src="imgs/ong5.png" class="rounded-top" alt="..." width="90px" height="80px">
+                            </div>
+                            <div class="col">
+                                <div class="row p-2">
+                                    Vacinação contra sarampo
+                                </div>
+                                <div class="row">
+                                    <a href="#">Saude Maringá</a>
+                                </div>
+                            </div>
+                            <DIV class="col">
+                                <div class="row p-4">
+                                    Saúde
+                                </div>
+                            </DIV>
+                            <div class="col-2">
+                                <div class="row" id="localizacao">
+                                    Iguatemi - PR
+                                </div>
+                                <div class="row">
+                                    18/06/2021
+                                </div>
+                                <div class="row mt-2">
+                                    <a href="visualizacaoVaga.html">Ver mais</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row border border-2 mt-1 p-2 ongs" style="background-color: whitesmoke;">
+                            <div class="col">
+                                <img src="imgs/yellow-sunlight-and-abstract-person.webp" class="rounded-top" alt="..."
+                                    width="90px" height="80px">
+                            </div>
+                            <div class="col">
+                                <div class="row p-2">
+                                    Um dia cuidando dos idosos
+                                </div>
+                                <div class="row">
+                                    <a href="#">Old People</a>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row p-4">
+                                    Assistência Social
+                                </div>
+                            </DIV>
+                            <div class="col-2">
+                                <div class="row" id="localizacao">
+                                    Maringá - PR
+                                </div>
+                                <div class="row">
+                                    19/06/2021
+                                </div>
+                                <div class="row mt-2">
+                                    <a href="#">Ver mais</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row border border-2 mt-2 p-2 ongs" style="background-color: whitesmoke;">
+                            <div class="col">
+                                <img src="imgs/ong2.jpg" class="rounded-top" alt="..." width="90px" height="80px">
+                            </div>
+                            <div class="col">
+                                <div class="row p-2">
+                                    Solidariedade com os doentes
+                                </div>
+                                <div class="row">
+                                    <a href="#">Health care</a>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row p-4">
+                                    Assistência Social
+                                </div>
+                            </DIV>
+                            <div class="col-2">
+                                <div class="row" id="localizacao">
+                                    Florianópolis - SC
+                                </div>
+                                <div class="row">
+                                    25/06/2021
+                                </div>
+                                <div class="row mt-2">
+                                    <a href="#">Ver mais</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row border border-2 mt-2 p-2 ongs" style="background-color: whitesmoke;">
+                            <div class="col">
+                                <img src="imgs/anjos.jpg" class="rounded-top" alt="..." width="90px" height="80px">
+                            </div>
+                            <div class="col">
+                                <div class="row p-2">
+                                    Comida a quem precisa
+                                </div>
+                                <div class="row">
+                                    <a href="#">Ong Fome Zero</a>
+                                </div>
+                            </div>
+                            <DIV class="col">
+                                <div class="row p-4">
+                                    Assistência Social
+                                </div>
+                            </DIV>
+                            <div class="col-2">
+                                <div class="row" id="localizacao">
+                                    Mandaguaçu - PR
+                                </div>
+                                <div class="row">
+                                    26/06/2021
+                                </div>
+                                <div class="row mt-2">
+                                    <a href="#">Ver mais</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row border border-2 mt-2 p-2 ongs" style="background-color: whitesmoke;">
+                            <div class="col">
+                                <img src="imgs/lorem.jpg" class="rounded-top" alt="..." width="90px" height="80px">
+                            </div>
+                            <div class="col">
+                                <div class="row p-2">
+                                    Fome nunca mais
+                                </div>
+                                <div class="row">
+                                    <a href="#">Robin Wood</a>
+                                </div>
+                            </div>
+                            <DIV class="col">
+                                <div class="row p-4">
+                                    Assistência Social
+                                </div>
+                            </DIV>
+                            <div class="col-2">
+                                <div class="row" id="localizacao">
+                                    Sarandi - PR
+                                </div>
+                                <div class="row">
+                                    29/06/2021
+                                </div>
+                                <div class="row mt-2">
+                                    <a href="#">Ver mais</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row border border-2 mt-2 p-2 ongs" style="background-color: whitesmoke;">
+                            <div class="col">
+                                <img src="imgs/ong6.png" class="rounded-top" alt="..." width="90px" height="80px">
+                            </div>
+                            <div class="col">
+                                <div class="row p-2">
+                                    Ajudando lar de idosos
+                                </div>
+                                <div class="row">
+                                    <a href="#">Cuidado especial</a>
+                                </div>
+                            </div>
+                            <DIV class="col">
+                                <div class="row p-4">
+                                    Assistência Social
+                                </div>
+                            </DIV>
+                            <div class="col-2">
+                                <div class="row localizacao">
+                                    Marialva - PR
+                                </div>
+                                <div class="row">
+                                    03/07/2021
+                                </div>
+                                <div class="row mt-2">
+                                    <a href="#">Ver mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="row corNavBarPadrao" style="height: fit-content; margin: 0 auto;">
+                <div class="row p-2" style="padding: 20px 20px; margin: 0 auto;">
+                    <div class="col-1" style="padding: 20px 10px;">
+                        <img src="imgs/ong-logo-removebg-preview.png" alt="" width="80px" height="80px">
+                    </div>
+                    <div class="col-8" style="padding: 10px;">
+                        <h6><a href="#" style="color: black;">Contato</a></h6>
+                        <h6><a href="#" style="color: black;">Sobre</a></h6>
+                        <h6><a href="#" style="color: black;">Termos de Uso</a></h6>
+                        <h6><a href="#" style="color: black;">Política de privacidade</a></h6>
+                    </div>
+                    <div class="col-3" style="padding: 10px;">
+                        <div class="row">
+                            <h6> Todos os direitos reservados </h6>
+                        </div>
+                        <div class="row">
+                            <h6> UNICESUMAR - <a href="https://www.unicesumar.edu.br/home/"
+                                    style="color: blue;">unicesumar.edu.br</a></h6>
+                        </div>
+                        <div class="row">
+                            <h6>
+                                Maringá PR
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <script src=".\js\main.js"></script>
+</body>
+
+</html>
